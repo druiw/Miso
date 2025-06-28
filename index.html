@@ -9,9 +9,11 @@
       href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <script src="script.js" defer></script>
   </head>
   <body>
     <div class="container">
+      <!-- Navbar -->
       <div class="navbar">
         <h1 class="logo">MISO</h1>
         <div class="nav-buttons-box">
@@ -20,10 +22,12 @@
         </div>
       </div>
       <div class="content">
+        <!-- Task Input -->
         <div class="task-input-container">
           <input type="text" placeholder="Add a new task" class="task-input" />
           <button class="add-task">+</button>
         </div>
+        <!-- Status Bar -->
         <div class="status-bar">
           <div class="filters">
             <span class="filter">All Tasks</span>
@@ -32,6 +36,8 @@
           </div>
           <span class="clear-all">Clear All</span>
         </div>
+        <!-- Task Section -->
+        <div class="task-section"></div>
       </div>
     </div>
   </body>
