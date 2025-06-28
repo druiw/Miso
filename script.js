@@ -7,15 +7,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // Add on click event to the add button
   addButton.addEventListener("click", addTask);
 
+  // Add on Enter key event
+  taskInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") addTask();
+  });
+
   // Clear on click event for the clear button
   clearButton.addEventListener("click", () => {
     console.log("Clear all tasks");
     clearAllTasks();
-  });
-
-  // Add on Enter key event
-  taskInput.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") addTask();
   });
 
   function addTask() {
@@ -27,10 +27,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const task = document.createElement("div");
     task.classList.add("task-item");
-    task.textContent = text;
+
+    // Checkbox
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.classList.add("task-checkbox");
+
+    checkbox.addEventListener("change", () =>
+      task.classList.toggle("completed", checkbox.checked)
+    );
+
+    const span = document.createElement("span");
+    span.classList.add("task-text");
+    span.textContent = text;
+
+    task.append(checkbox, span);
     taskSection.appendChild(task);
 
     taskInput.value = "";
+    taskInput.focus();
   }
 
   function clearAllTasks() {
