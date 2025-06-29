@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const taskInput = document.querySelector(".task-input");
   const taskSection = document.querySelector(".task-section");
   const clearButton = document.querySelector(".clear-all");
+  const filters = document.querySelector(".filter");
+  const completedFilter = filters[2];
 
   // Add on click event to the add button
   addButton.addEventListener("click", addTask);
@@ -17,6 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Clear all tasks");
     clearAllTasks();
   });
+
+  completedFilter.addEventListener("click", showCompletedTasks);
 
   function addTask() {
     const text = taskInput.value.trim();
