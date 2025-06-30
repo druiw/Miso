@@ -1,58 +1,98 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const KEY = "tasks";
+  let tasks = loadTasks(); // pulls from localStorage or []
+
   const addButton = document.querySelector(".add-task");
   const taskInput = document.querySelector(".task-input");
   const taskSection = document.querySelector(".task-section");
   const clearButton = document.querySelector(".clear-all");
-  const filters = document.querySelector(".filter");
-  const completedFilter = filters[2];
+  const filterButtons = document.querySelectorAll(".filter");
 
-  // Add on click event to the add button
-  addButton.addEventListener("click", addTask);
+  // INITIAL RENDER of saved tasks
+  tasks.forEach(({ id, text, completed }) =>
+    createTaskElement(id, text, completed)
+  );
 
-  // Add on Enter key event
+  // ADD TASK
+  addButton.addEventListener("click", handleAdd);
   taskInput.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") addTask();
+    if (e.key === "Enter") handleAdd();
   });
 
-  // Clear on click event for the clear button
+  // CLEAR ALL
   clearButton.addEventListener("click", () => {
-    console.log("Clear all tasks");
-    clearAllTasks();
+    tasks = [];
+    saveTasks();
+    taskSection.innerHTML = "";
   });
 
-  completedFilter.addEventListener("click", showCompletedTasks);
+  // FILTER TABS
+  filterButtons.forEach((btn) => {
+    btn.addEventListener("click", () => applyFilter(btn.dataset.forTab));
+  });
 
-  function addTask() {
+  // ─── FUNCTIONS ─────────────────────────────────────────
+
+  function handleAdd() {
     const text = taskInput.value.trim();
-    // Check if the input is not empty
-    if (!text) {
-      return;
-    }
+    if (!text) return;
 
-    const task = document.createElement("div");
-    task.classList.add("task-item");
+    const id = Date.now().toString();
+    tasks.push({ id, text, completed: false });
+    saveTasks();
 
-    // Checkbox
-    const checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-    checkbox.classList.add("task-checkbox");
-
-    checkbox.addEventListener("change", () =>
-      task.classList.toggle("completed", checkbox.checked)
-    );
-
-    const span = document.createElement("span");
-    span.classList.add("task-text");
-    span.textContent = text;
-
-    task.append(checkbox, span);
-    taskSection.appendChild(task);
-
+    createTaskElement(id, text, false);
     taskInput.value = "";
     taskInput.focus();
   }
 
-  function clearAllTasks() {
-    taskSection.innerHTML = "";
+  function createTaskElement(id, text, completed) {
+    const task = document.createElement("div");
+    task.classList.add("task-item");
+    task.dataset.id = id;
+
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.checked = completed;
+    checkbox.addEventListener("change", () => {
+      toggleCompleted(id, checkbox.checked);
+      task.classList.toggle("completed", checkbox.checked);
+    });
+
+    const span = document.createElement("span");
+    span.textContent = text;
+
+    if (completed) task.classList.add("completed");
+
+    task.append(checkbox, span);
+    taskSection.appendChild(task);
+  }
+
+  function toggleCompleted(id, isDone) {
+    const t = tasks.find((t) => t.id === id);
+    if (t) {
+      t.completed = isDone;
+      saveTasks();
+    }
+  }
+
+  function applyFilter(tab) {
+    document.querySelectorAll(".task-item").forEach((task) => {
+      const done = task.classList.contains("completed");
+      const show = tab === "1" ? true : tab === "2" ? !done : done;
+      task.style.display = show ? "flex" : "none";
+    });
+  }
+
+  function loadTasks() {
+    try {
+      return JSON.parse(localStorage.getItem(KEY)) || [];
+    } catch {
+      return [];
+    }
+  }
+
+  function saveTasks() {
+    localStorage.setItem(KEY, JSON.stringify(tasks));
   }
 });

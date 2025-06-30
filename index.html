@@ -30,14 +30,18 @@
         <!-- Status Bar -->
         <div class="status-bar">
           <div class="filters">
-            <span class="filter">All Tasks</span>
-            <span class="filter">In Progress</span>
-            <span class="filter">Completed</span>
+            <span class="filter" data-for-tab="1">All Tasks</span>
+            <span class="filter" data-for-tab="2">In Progress</span>
+            <span class="filter" data-for-tab="3">Completed</span>
           </div>
           <span class="clear-all">Clear All</span>
         </div>
         <!-- Task Section -->
-        <div class="task-section"></div>
+        <div class="task-section">
+          <div class="all-tasks-content" data-tab="1"></div>
+          <div class="in-progress-tasks-content" data-tab="2"></div>
+          <div class="completed-tasks-content" data-tab="3"></div>
+        </div>
       </div>
     </div>
     <footer>
