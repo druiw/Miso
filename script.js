@@ -31,6 +31,16 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", () => applyFilter(btn.dataset.forTab));
   });
 
+  filterButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      // remove from all
+      filterButtons.forEach((b) => b.classList.remove("active"));
+      // add to the clicked one
+      btn.classList.add("active");
+      applyFilter(btn.dataset.forTab);
+    });
+  });
+
   // ─── FUNCTIONS ─────────────────────────────────────────
 
   function handleAdd() {

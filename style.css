@@ -126,13 +126,15 @@ body {
 }
 
 .filter {
-  font-weight: 500;
-  color: #888;
+  background: none; /* reset default button styles */
+  border: none;
+  font: inherit; /* inherit your work-sans font */
   cursor: pointer;
+  padding: 0.25em 0.5em;
+  color: gray;
 }
 
-.filter:active,
-.filter:focus {
+.filter:active {
   color: black;
 }
 
