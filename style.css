@@ -156,6 +156,7 @@ body {
 .nav-buttons-box {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
   width: 200px;
   height: 100%;
