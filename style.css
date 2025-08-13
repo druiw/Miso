@@ -3,7 +3,7 @@ body {
   font-family: Work-Sans, sans-serif;
   height: 100vh;
   margin: 0;
-  background-color: #f6f8fa;
+  background-color: white;
 }
 
 .container {
@@ -16,7 +16,7 @@ body {
   height: 863px;
   margin: 30px auto 0 auto;
   padding: 30px 30px;
-  background-color: white;
+  background-color: #cfebf9;
   box-shadow: 0 5px 1.5rem rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   box-sizing: border-box;
@@ -38,7 +38,8 @@ body {
   justify-content: space-between;
   width: 100%;
   height: 60px;
-  border-bottom: 2px solid #f6f8fa;
+  border-bottom: 2px solid white;
+  color: black;
   padding: 1px 1px;
 }
 
@@ -48,6 +49,7 @@ body {
   border: 2px solid #e5e5e5;
   border-radius: 12px;
   overflow: hidden;
+  background-color: white;
   max-width: 600px;
   width: 100%;
 }
@@ -99,7 +101,7 @@ body {
 
 .add-task {
   padding: 12px 18px;
-  background-color: #f0f0f0;
+  background-color: white;
   border: none;
   border-left: 2px solid #e5e5e5;
   cursor: pointer;
@@ -131,7 +133,7 @@ body {
   font: inherit; /* inherit your work-sans font */
   cursor: pointer;
   padding: 0.25em 0.5em;
-  color: gray;
+  color: black;
 }
 
 .filter:active {
@@ -168,14 +170,14 @@ body {
   font-family: Work-Sans, sans-serif;
   font-size: 1.3rem;
   font-weight: bold;
-  color: gray;
+  color: black;
   cursor: pointer;
 }
 
 .nav-button:hover,
 .nav-button:focus,
 .nav-button:active {
-  color: black;
+  color: gray;
 }
 
 .footer-text {
@@ -184,4 +186,45 @@ body {
   color: #888;
   text-align: center;
   margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    height: auto;
+    gap: 30px;
+    padding: 20px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nav-buttons-box {
+    width: auto;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .task-input {
+    font-size: 16px;
+  }
+
+  .add-task {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .filters {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .status-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
 }
