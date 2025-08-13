@@ -12,38 +12,45 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <div class="container">
-      <!-- Navbar -->
-      <div class="navbar">
-        <h1 class="logo">MISO</h1>
-        <div class="nav-buttons-box">
-          <li class="nav-button">Tasks</li>
-          <li class="nav-button">Notes</li>
-        </div>
-      </div>
-      <div class="content">
-        <!-- Task Input -->
-        <div class="task-input-container">
-          <input type="text" placeholder="Add a new task" class="task-input" />
-          <button class="add-task">+</button>
-        </div>
-        <!-- Status Bar -->
-        <div class="status-bar">
-          <div class="filters">
-            <button class="filter" data-for-tab="1">All Tasks</button>
-            <button class="filter" data-for-tab="2">In Progress</button>
-            <button class="filter" data-for-tab="3">Completed</button>
+    <div class="page">
+      <div class="container">
+        <!-- Navbar -->
+        <div class="navbar">
+          <h1 class="logo">MISO</h1>
+          <div class="nav-buttons-box">
+            <li class="nav-button">Tasks</li>
+            <li class="nav-button">Notes</li>
           </div>
-          <span class="clear-all">Clear All</span>
         </div>
-        <!-- Task Section -->
-        <div class="task-section">
-          <div class="all-tasks-content" data-tab="1"></div>
-          <div class="in-progress-tasks-content" data-tab="2"></div>
-          <div class="completed-tasks-content" data-tab="3"></div>
+        <div class="content">
+          <!-- Task Input -->
+          <div class="task-input-container">
+            <input
+              type="text"
+              placeholder="Add a new task"
+              class="task-input"
+            />
+            <button class="add-task">+</button>
+          </div>
+          <!-- Status Bar -->
+          <div class="status-bar">
+            <div class="filters">
+              <button class="filter" data-for-tab="1">All Tasks</button>
+              <button class="filter" data-for-tab="2">In Progress</button>
+              <button class="filter" data-for-tab="3">Completed</button>
+            </div>
+            <span class="clear-all">Clear All</span>
+          </div>
+          <!-- Task Section -->
+          <div class="task-section">
+            <div class="all-tasks-content" data-tab="1"></div>
+            <div class="in-progress-tasks-content" data-tab="2"></div>
+            <div class="completed-tasks-content" data-tab="3"></div>
+          </div>
         </div>
       </div>
     </div>
+
     <footer>
       <p class="footer-text">Made with ❤️ by Drew</p>
     </footer>
