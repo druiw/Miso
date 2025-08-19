@@ -32,7 +32,7 @@ This project was created to practice **front-end development** fundamentals and 
 ## 🚀 Getting Started
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/miso.git
+git clone https://github.com/druiw/Miso.git
 ```
 
 ### 2. Open in browser  
