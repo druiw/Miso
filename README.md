@@ -3,7 +3,7 @@
 # 📝 Miso
 A lightweight **task management application** built with **HTML, CSS, and JavaScript** 🖊️  
 
----
+
 
 ## 📖 About this Project
 Miso is a simple task manager designed to help you stay organized without the clutter of larger productivity apps. It focuses on **speed, simplicity, and usability**—making it easy to add, track, and complete tasks right in your browser.  
