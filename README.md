@@ -15,7 +15,8 @@ This project was created to practice **front-end development** fundamentals and 
 - ✅ Mark tasks as complete / incomplete  
 - 🗑️ Delete tasks you no longer need  
 - 💾 Persistent storage using **localStorage** (tasks remain after refresh)  
-- 📱 Responsive UI that works on desktop & mobile  
+- 📱 Responsive UI that works on desktop & mobile
+<br><br>
 
 ## 🛠️ Tech Stack
 - **HTML5** – structure and layout  
