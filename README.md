@@ -10,14 +10,12 @@ Miso is a simple task manager designed to help you stay organized without the cl
 This project was created to practice **front-end development** fundamentals and to explore clean UI design, modular JavaScript, and local storage for persistent data.
 
 
-
 ## ✨ Features
 - ➕ Add new tasks quickly  
 - ✅ Mark tasks as complete / incomplete  
 - 🗑️ Delete tasks you no longer need  
 - 💾 Persistent storage using **localStorage** (tasks remain after refresh)  
 - 📱 Responsive UI that works on desktop & mobile  
-<br><br>
 
 ## 🛠️ Tech Stack
 - **HTML5** – structure and layout  
@@ -40,11 +38,6 @@ git clone https://github.com/your-username/miso.git
 
 ### 2. Open in browser  
 No build tools required. Just open `index.html` in your preferred browser.  
-
-<br><br>
-
-## 📸 Screenshots
-*(Add more here if you want to show task states or mobile view)*
 
 <br><br>
 
