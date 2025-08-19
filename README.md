@@ -9,7 +9,6 @@ Miso is a simple task manager designed to help you stay organized without the cl
 
 This project was created to practice **front-end development** fundamentals and to explore clean UI design, modular JavaScript, and local storage for persistent data.
 
-
 ## ✨ Features
 - ➕ Add new tasks quickly  
 - ✅ Mark tasks as complete / incomplete  
@@ -22,7 +21,6 @@ This project was created to practice **front-end development** fundamentals and 
 - **HTML5** – structure and layout  
 - **CSS3** – styling and responsive design  
 - **JavaScript (ES6+)** – interactivity and local storage  
-<br><br>
 
 ## 🧑‍💻 What I Learned
 - How to structure a small project using **HTML, CSS, and JavaScript** without frameworks  
